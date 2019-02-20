@@ -27,3 +27,11 @@
 <p>
   Form Status: {{ profileForm.status }}
 </p>
+
+
+<!-- form11 -->
+<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.name}}, {{item.email}}, {{item.message}}
+  </li>
+</ul>

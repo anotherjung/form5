@@ -1,0 +1,36 @@
+<p>
+  firestoreform works!
+</p>
+
+<!-- form11 -->
+<ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item.name}}, {{item.email}}, {{item.message}}
+    </li>
+  </ul>
+
+<form [formGroup]="myForm" [hidden]="success" (ngSubmit)="submitHandler()">
+  <input formControlName="email">
+  <span *ngIf="email.invalid && email.touched">
+      Your email does not look right
+  </span>
+  <input formControlName="name">
+  <span *ngIf="message.invalid && message.touched">
+      Required field
+  </span>
+  <input formControlName="message">
+  <span *ngIf="message.invalid && message.touched">
+      Required field
+  </span>
+  <button [disabled]="myForm.invalid">submit</button>
+</form>
+
+
+  
+
+<div *ngIf="success" class="notification is-success">
+  <h1>success</h1>
+</div>
+
+
+

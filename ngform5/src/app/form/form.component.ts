@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormControl } from '@angular/forms'; //form2
+//import { FormControl } from '@angular/forms'; //form2
+
+import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'; //form12
+import { AngularFirestore } from 'angularfire2/firestore';//form12
 
 @Component({
   selector: 'app-form',
@@ -9,7 +12,9 @@ import { FormControl } from '@angular/forms'; //form2
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb: FormBuilder, 
+    private afs: AngularFirestore) { }
+  
   name = new FormControl(''); //form2
 
   //form4
@@ -18,6 +23,8 @@ export class FormComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
+  
 }
