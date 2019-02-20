@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 
+import { ReactiveFormsModule } from '@angular/forms'; //form1
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,6 +16,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule, //form1
     AppRoutingModule
   ],
   providers: [],
