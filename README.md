@@ -47,3 +47,73 @@ content_copy
 <p>
   Value: {{ name.value }}
 </p>
+
+>>creating formGroup, when you have many text fields
+>form4
+ng g c formGroup
+
+>form5
+>>upate routing, app-routing.module.ts
+src/app/profile-editor/profile-editor.component.ts (form group)
+content_copy
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+ 
+@Component({
+  selector: 'app-profile-editor',
+  templateUrl: './profile-editor.component.html',
+  styleUrls: ['./profile-editor.component.css']
+})
+export class ProfileEditorComponent {
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  });
+}
+
+
+//form6
+src/app/profile-editor/profile-editor.component.html (template form group)
+content_copy
+<!-- form6 -->
+<form [formGroup]="profileForm">
+  
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+</form>
+
+
+>form7
+<!-- form7 -->
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+</form>
+
+>form8
+src/app/profile-editor/profile-editor.component.html (submit button)
+content_copy
+<!-- form8 -->
+<button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+>form9
+src/app/profile-editor/profile-editor.component.ts (import)
+content_copy
+import { Validators } from '@angular/forms'; //form9

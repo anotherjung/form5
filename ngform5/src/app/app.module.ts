@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 import { HomeComponent } from './home/home.component';
 
-import { ReactiveFormsModule } from '@angular/forms'; //form1
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormGroupComponent } from './form-group/form-group.component'; //form1
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
-    HomeComponent
+    HomeComponent,
+    FormGroupComponent
   ],
   imports: [
     BrowserModule,

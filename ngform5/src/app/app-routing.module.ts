@@ -4,10 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { FormComponent } from './form/form.component';
+import { FormGroupComponent } from './form-group/form-group.component'; //form5
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'form', component: FormComponent },
+  { path: 'formgroup', component: FormGroupComponent }, //form5
 ];
 
 @NgModule({

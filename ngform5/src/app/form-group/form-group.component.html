@@ -1,0 +1,29 @@
+<p>
+  form-group works!
+</p>
+<!-- form7 -->
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+</form>
+
+<!-- form8 -->
+<button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+<p>
+  Form Value: {{ profileForm.value | json }}
+</p>
+
+
+<p>
+  Form Status: {{ profileForm.status }}
+</p>
