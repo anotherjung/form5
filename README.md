@@ -201,5 +201,10 @@ ng g c firestoreform
 >update app-routing.module.ts, FirestoreformComponent
 
 
+> test url, https://contactform-196a0.firebaseapp.com/fireform
+
+
+
+
 
 
